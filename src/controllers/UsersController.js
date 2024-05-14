@@ -4,6 +4,8 @@ const AppError = require('../utils/AppError');
 const sqliteConnection = require("../database/sqlite");
 
 class UsersController {
+
+  
   async create(request, response) {
     const { name, email, password } = request.body;
 
@@ -22,6 +24,8 @@ class UsersController {
 
     return response.status(201).json();
   }
+
+
 
   async update(request, response) {
     const { name, email, password, old_password } = request.body;
