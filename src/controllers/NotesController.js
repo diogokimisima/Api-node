@@ -5,26 +5,26 @@ class NotesController {
         const { title, description, tags, links } = request.body;
         const { user_id } = request.params;
 
-        const [note_id]  = await knex("notes").insert({
+        const [note_id] = await knex("notes").insert({
             title,
             description,
             user_id
         })
 
         const linksInsert = links.map(link => {
-            return{
-              note_id,
-              url: link  
+            return {
+                note_id,
+                url: link
             }
         });
 
         await knex("links").insert(linksInsert);
 
         const tagsInsert = tags.map(name => {
-            return{
-              note_id,
-              name,
-              user_id
+            return {
+                note_id,
+                name,
+                user_id
             }
         });
 
@@ -56,13 +56,22 @@ class NotesController {
     }
 
     async index(request, response) {
-        const { title, user_id } = request.query;
+        const { user_id, title, tags } = request.query;
 
-        const notes = await knex("notes")
-        .where({ user_id})
-        .whereLike("title", `%${title}%`)
-        .orderBy("title");
+        let notes;
 
+        if (tags) {
+            const filterTags = tags.split(',').map(tag => tag.trim());
+           
+            notes = await knex("tags")
+            .whereIn("name", filterTags)
+
+        } else {
+            notes = await knex("notes")
+                .where({ user_id })
+                .whereLike("title", `%${title}%`)
+                .orderBy("title");
+        }
         return response.json(notes)
     }
 }
