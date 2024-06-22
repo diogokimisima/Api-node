@@ -3,7 +3,7 @@
 
 <br>
 :page_facing_up: Explicação:
-Este repositório contém os arquivos do projeto "Back-End com Node.js, Express e SQLite", uma aplicação de servidor desenvolvida em Node.js usando o framework Express para criar APIs RESTful. O banco de dados utilizado é o SQLite, e o gerenciamento das consultas é feito com o auxílio do Knex.js. As senhas dos usuários são criptografadas utilizando o bcrypt.js antes de serem armazenadas no banco de dados.
+Este repositório contém os arquivos backend do projeto "Notes", uma aplicação de servidor desenvolvida em Node.js usando o framework Express para criar APIs RESTful. O banco de dados utilizado é o SQLite, e o gerenciamento das consultas é feito com o auxílio do Knex.js. As senhas dos usuários são criptografadas utilizando o bcrypt.js antes de serem armazenadas no banco de dados.
 
 📁 Estrutura do Projeto
 
