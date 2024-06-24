@@ -7,10 +7,10 @@ Este repositório contém os arquivos backend do projeto "Notes", uma aplicaçã
 
 📁 Estrutura do Projeto
 
-controllers: Pasta contendo os controladores para cada entidade do sistema.
-routes: Definição das rotas da API, com cada arquivo sendo responsável por um conjunto de rotas relacionadas a uma entidade.
-database: Localização do arquivo do banco de dados.
-server.js: Arquivo principal que inicializa o servidor e define as configurações globais.
+- controllers: Pasta contendo os controladores para cada entidade do sistema.
+- routes: Definição das rotas da API, com cada arquivo sendo responsável por um conjunto de rotas relacionadas a uma entidade.
+- database: Localização do arquivo do banco de dados.
+- server.js: Arquivo principal que inicializa o servidor e define as configurações globais.
 
 
 
