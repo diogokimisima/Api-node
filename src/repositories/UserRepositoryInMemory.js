@@ -9,7 +9,7 @@ class UserRepositoryInMemory {
             password
         };
 
-        this.users.push();
+        this.users.push(user);
 
         return user;
     }
